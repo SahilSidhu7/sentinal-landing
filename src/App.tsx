@@ -6,7 +6,7 @@ import { Install } from "./pages/Install";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route element={<SiteLayout />}>
           <Route path="/" element={<Home />} />
