@@ -1,22 +1,30 @@
-# /frontend — Main Dashboard (Team A)
+# sentinal-landing
 
-Branch: `frontend` · Spec: `docs/SPEC.md` §3 (Module 6), §6, §8
+Marketing/landing site for [Sentinal (VibeSentinel)](https://github.com/SahilSidhu7/Sentinal) — split out of that repo's `/frontend` folder so it can be hosted independently on GitHub Pages.
 
-Owns: **dashboard management** — the full multi-target web dashboard.
+Live at: **https://sahilsidhu7.github.io/sentinal-landing/**
 
-## Scope
-- Login (JWT), Overview (security score gauge, findings-by-severity chart, live activity feed), Findings list + detail view, Live feed (WebSocket), Attacks/Live Monitoring view, Settings.
-- Talks to `/backend` only, over REST + WebSocket (`docs/SPEC.md` §6). No direct dependency on `/model` or `/cli`.
+## One-line install (for Sentinal itself)
+
+This site also hosts Sentinal's bootstrap installer:
+
+```bash
+curl -fsSL https://sahilsidhu7.github.io/sentinal-landing/install.sh | bash
+```
+
+That script (`public/install.sh` here) clones the [Sentinal](https://github.com/SahilSidhu7/Sentinal) repo and runs its own `scripts/install.sh` (venv, editable installs, ONNX export, dashboard build) — see that repo's README for what it actually installs and the full CLI reference.
 
 ## Stack
-React + Vite + Tailwind + Recharts.
 
-## Setup (once scaffolded)
-```
-cd frontend
+React + Vite + Tailwind.
+
+## Develop
+
+```bash
 npm install
 npm run dev
 ```
 
-## Contract you depend on
-Backend API surface in `docs/SPEC.md` §6 (`/findings`, `/score`, `/attacks`, `/ws/live`, etc). If backend hasn't stood these up yet, mock them locally — don't block on `/backend` completion to start on layout/components.
+## Deploy
+
+Push to `main` — `.github/workflows/deploy.yml` builds and publishes to GitHub Pages automatically (`actions/deploy-pages`). `vite.config.ts`'s `base: '/sentinal-landing/'` matches this repo's Pages project-site path; change both together if the repo is ever renamed.
