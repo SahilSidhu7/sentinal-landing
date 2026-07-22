@@ -25,13 +25,14 @@ else
   git clone "$REPO_URL" "$INSTALL_DIR"
 fi
 
-if [ ! -x "$INSTALL_DIR/scripts/install.sh" ]; then
-  echo "error: $INSTALL_DIR/scripts/install.sh not found or not executable — repo layout changed?" >&2
+if [ ! -f "$INSTALL_DIR/scripts/install.sh" ]; then
+  echo "error: $INSTALL_DIR/scripts/install.sh not found — repo layout changed?" >&2
   exit 1
 fi
 
 echo "==> handing off to $INSTALL_DIR/scripts/install.sh"
-"$INSTALL_DIR/scripts/install.sh"
+bash "$INSTALL_DIR/scripts/install.sh"  # invoked via bash explicitly, not relying on the executable bit
+                                         # surviving a Windows-authored git commit
 
 echo ""
 echo "==> done. cd \"$INSTALL_DIR\" && source .venv/bin/activate && sentinal --help"
