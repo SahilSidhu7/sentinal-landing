@@ -10,7 +10,7 @@ export function SiteLayout() {
   return (
     <div className="flex min-h-screen flex-col bg-background font-sans text-on-surface">
       <BackgroundAnimation />
-      <header className="sticky top-0 z-50 border-b border-outline bg-black/90 backdrop-blur-md">
+      <header className="glass-panel glass-panel-top sticky top-0 z-50">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
           <NavLink
             to="/"
@@ -49,7 +49,7 @@ export function SiteLayout() {
       <main className="flex-1">
         <Outlet />
       </main>
-      <footer className="border-t border-outline bg-surface-container-lowest py-14">
+      <footer className="glass-panel glass-panel-bottom py-14">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-6 text-center">
           <nav className="flex items-center gap-8 font-mono text-mono-label uppercase tracking-widest text-on-surface-variant">
             <NavLink to="/docs" className="transition-colors duration-200 ease-out hover:text-primary">
