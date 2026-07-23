@@ -4,27 +4,19 @@ import { CheckIcon, CopyIcon } from "../components/icons";
 
 const INSTALL_STEPS = [
   {
-    title: "1. Clone the repo",
-    code: "git clone https://github.com/SahilSidhu7/Sentinal.git\ncd Sentinal",
+    title: "1. Install",
+    code: "curl -fsSL https://sahilsidhu7.github.io/sentinal-landing/install.sh | bash",
+    note: "Clones Sentinal, sets up a venv, and installs the sentinal CLI.",
   },
   {
-    title: "2. Start the core stack",
-    code: "docker-compose up -d",
-    note: "Brings up the FastAPI backend, dashboard, and SQLite storage.",
+    title: "2. Watch your app",
+    code: "cd Sentinal\nsource .venv/bin/activate\nsentinal watch ./my-app",
+    note: "Builds and runs your app's container, scans it, and starts the local detection pipeline.",
   },
   {
-    title: "3. Log in",
+    title: "3. Open the dashboard",
     code: "open http://localhost:8000",
-    note: "Single-admin MVP — sign in with the admin credentials printed on first boot.",
-  },
-  {
-    title: "4. Deploy the sentinel-agent on a target server",
-    code: "docker run -d \\\n  --name sentinal-agent \\\n  -v /path/to/target:/target:ro \\\n  sentinal/agent",
-    note: "The agent tails logs and runs detection locally; only structured findings/scores are sent to the core backend.",
-  },
-  {
-    title: "5. Register the target",
-    code: 'curl -X POST http://localhost:8000/targets \\\n  -H "Authorization: Bearer $TOKEN" \\\n  -d \'{"name": "my-server", "kind": "container"}\'',
+    note: "Served by the same CLI process — no separate service to stand up.",
   },
 ];
 
@@ -41,8 +33,8 @@ const SECTIONS = [
     id: "architecture",
     title: "Architecture",
     body: [
-      "Two deployable units: the core backend + dashboard (FastAPI, SQLite, WebSocket), and a separate minimal sentinel-agent you run alongside your own servers.",
-      "The agent tails logs, runs the anomaly pipeline locally, and ships only structured findings and scores to the core backend — raw logs never leave your infrastructure.",
+      "One CLI, one box: sentinal watch builds and runs your app's container, scans it, tails its logs through a fully local detection pipeline, and serves the dashboard — all in a single process.",
+      "Nothing leaves your machine except the structured findings and scores you choose to forward. There's no separate backend service or remote agent to deploy today.",
     ],
   },
   {
@@ -58,7 +50,7 @@ const SECTIONS = [
     title: "Auto-response & IP banning",
     body: [
       "Critical findings always produce an audit-log entry and a dashboard alert. IP banning is manual-confirm by default.",
-      "Opt-in auto-ban requires sustained high-confidence anomaly scores and executes agent-side, scoped to that agent's own network namespace — never core-backend-initiated. Bans are TTL-based and reversible.",
+      "Opt-in auto-ban requires sustained high-confidence anomaly scores and is scoped to the container Sentinal is watching. Bans are TTL-based and reversible.",
     ],
   },
   {
@@ -120,9 +112,9 @@ export function Docs() {
         <Reveal as="section" id="installation" className="scroll-mt-24">
           <h2 className="mb-3 font-display text-headline-md font-semibold text-on-surface">Installation</h2>
           <p className="mb-8 text-body-sm text-on-surface-variant">
-            Requires Docker and docker-compose. Scapy packet sniffing and OSV.dev CVE lookups
-            degrade gracefully if you're offline or unprivileged — everything else works out of
-            the box.
+            Requires Docker — Sentinal uses it to build and run the container it watches. Scapy
+            packet sniffing and OSV.dev CVE lookups degrade gracefully if you're offline or
+            unprivileged — everything else works out of the box.
           </p>
           <div className="space-y-8">
             {INSTALL_STEPS.map((step) => (

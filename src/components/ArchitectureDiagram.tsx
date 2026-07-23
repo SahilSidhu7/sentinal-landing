@@ -1,29 +1,31 @@
-import { SyncIcon } from "./icons";
+const STEPS = [
+  { label: "Watch", detail: "docker build/run — your app's container" },
+  { label: "Scan", detail: "secrets, CVEs, docker misconfig, weak creds" },
+  { label: "Detect", detail: "Drain3 + ONNX MiniLM + Isolation Forest, fully local" },
+  { label: "Show", detail: "dashboard UI + JSON API, one port" },
+  { label: "Act", detail: "manual-confirm IP ban, scoped to your container" },
+];
 
 export function ArchitectureDiagram() {
   return (
-    <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-[1fr_auto_1fr]">
-      <div className="rounded-2xl border border-outline bg-surface-container-low p-8 text-left">
-        <div className="font-mono text-mono-label text-primary">[ SENTINEL_AGENT ]</div>
-        <p className="mt-3 font-display text-headline-md font-semibold text-on-surface">Your server</p>
-        <p className="mt-2 text-body-sm text-on-surface-variant">tails logs, runs detection locally</p>
-      </div>
-
-      <div className="flex flex-row items-center justify-center gap-3 text-on-surface-variant md:flex-col md:gap-3">
-        <div className="h-px w-12 bg-gradient-to-r from-primary to-transparent md:h-12 md:w-px md:bg-gradient-to-b" />
-        <SyncIcon className="h-5 w-5 shrink-0" />
-        <span className="whitespace-nowrap font-mono text-mono-label text-on-surface-variant">
-          findings + scores only
-        </span>
-        <div className="h-px w-12 bg-gradient-to-l from-primary to-transparent md:h-12 md:w-px md:bg-gradient-to-t" />
-      </div>
-
-      <div className="rounded-2xl border border-outline bg-surface-container-low p-8 text-left">
-        <div className="font-mono text-mono-label text-primary">[ SENTINAL_CORE ]</div>
-        <p className="mt-3 font-display text-headline-md font-semibold text-on-surface">Your infra</p>
-        <p className="mt-2 text-body-sm text-on-surface-variant">
-          core backend + dashboard — FastAPI, SQLite, live WebSocket feed
-        </p>
+    <div className="rounded-2xl border border-outline bg-surface-container-low p-8 text-left">
+      <div className="font-mono text-mono-label text-primary">[ SENTINAL ]</div>
+      <p className="mt-3 font-display text-headline-md font-semibold text-on-surface">
+        One CLI, running on your machine
+      </p>
+      <p className="mt-2 text-body-sm text-on-surface-variant">
+        No raw logs leave your box — this loop runs entirely locally.
+      </p>
+      <div className="mt-6 flex flex-wrap items-center gap-3">
+        {STEPS.map((step, i) => (
+          <div key={step.label} className="flex items-center gap-3">
+            <div className="rounded-xl border border-outline bg-surface p-4">
+              <div className="font-mono text-mono-label text-primary">{step.label}</div>
+              <div className="mt-1 max-w-[10rem] text-body-sm text-on-surface-variant">{step.detail}</div>
+            </div>
+            {i < STEPS.length - 1 && <span className="text-on-surface-variant">→</span>}
+          </div>
+        ))}
       </div>
     </div>
   );
