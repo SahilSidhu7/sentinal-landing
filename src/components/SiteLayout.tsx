@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { NavLink, Outlet } from "react-router-dom";
 import { BackgroundAnimation } from "./BackgroundAnimation";
 
@@ -7,11 +8,26 @@ const NAV_ITEMS = [
 ];
 
 export function SiteLayout() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <div className="flex min-h-screen flex-col bg-background font-sans text-on-surface">
       <BackgroundAnimation />
-      <header className="glass-panel glass-panel-top sticky top-0 z-50">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+      <header className="sticky top-0 z-50">
+        <div
+          className={`mx-auto flex max-w-6xl items-center justify-between px-6 py-5 transition-all duration-[350ms] ease-out ${
+            scrolled
+              ? "scale-95 rounded-full border border-white/[0.08] bg-[rgba(10,10,10,0.3)] shadow-[0_8px_24px_rgba(0,0,0,0.25)] backdrop-blur-[24px] backdrop-saturate-[1.8]"
+              : ""
+          }`}
+        >
           <NavLink
             to="/"
             className="font-display text-headline-md font-bold tracking-tighter text-primary"
