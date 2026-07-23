@@ -12,7 +12,7 @@ This site also hosts Sentinal's bootstrap installer:
 curl -fsSL https://sahilsidhu7.github.io/sentinal-landing/install.sh | bash
 ```
 
-That script (`public/install.sh` here) clones the [Sentinal](https://github.com/SahilSidhu7/Sentinal) repo and runs its own `scripts/install.sh` (venv, editable installs, ONNX export, dashboard build) — see that repo's README for what it actually installs and the full CLI reference.
+That script (`public/install.sh` here) just forwards to the canonical `scripts/install.sh` in [Sentinal](https://github.com/SahilSidhu7/Sentinal) at call-time, so it can't drift out of sync — see that repo's README for what it actually installs and the full CLI reference.
 
 ## Stack
 
