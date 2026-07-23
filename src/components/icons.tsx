@@ -49,3 +49,38 @@ export function ActIcon(props: SVGProps<SVGSVGElement>) {
     </IconBase>
   );
 }
+
+export function CheckCircleIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <IconBase {...props}>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M8.5 12.5l2.2 2.2L15.5 9.5" />
+    </IconBase>
+  );
+}
+
+export function SyncIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <IconBase {...props}>
+      <path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3" />
+      <path d="M18 3v4h-4M6 21v-4h4" />
+    </IconBase>
+  );
+}
+
+export function CopyIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <IconBase {...props}>
+      <rect x="9" y="9" width="11" height="11" rx="1.5" />
+      <path d="M5 15V5a1.5 1.5 0 0 1 1.5-1.5H15" />
+    </IconBase>
+  );
+}
+
+export function CheckIcon(props: SVGProps<SVGSVGElement>) {
+  return (
+    <IconBase {...props}>
+      <path d="M5 13l4 4L19 7" />
+    </IconBase>
+  );
+}

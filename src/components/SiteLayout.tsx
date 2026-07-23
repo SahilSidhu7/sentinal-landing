@@ -1,33 +1,34 @@
 import { NavLink, Outlet } from "react-router-dom";
+import { BackgroundAnimation } from "./BackgroundAnimation";
 
 const NAV_ITEMS = [
   { to: "/", label: "Home" },
   { to: "/docs", label: "Docs" },
-  { to: "/install", label: "Installation" },
 ];
 
 export function SiteLayout() {
   return (
-    <div className="flex min-h-screen flex-col bg-slate-950 text-slate-100">
-      <header className="border-b border-slate-800 bg-slate-900/60">
+    <div className="flex min-h-screen flex-col bg-background font-sans text-on-surface">
+      <BackgroundAnimation />
+      <header className="sticky top-0 z-50 border-b border-outline bg-background/80 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <NavLink
             to="/"
-            className="text-lg font-semibold tracking-tight text-white transition-colors duration-200 ease-out hover:text-sky-300"
+            className="font-display text-headline-md font-bold tracking-tighter text-primary"
           >
-            Sentinal
+            SENTINAL
           </NavLink>
-          <nav className="flex items-center gap-1">
+          <nav className="flex items-center gap-8">
             {NAV_ITEMS.map((item) => (
               <NavLink
                 key={item.to}
                 to={item.to}
                 end={item.to === "/"}
                 className={({ isActive }) =>
-                  `rounded-md px-3 py-1.5 text-sm font-medium transition-colors duration-200 ease-out ${
+                  `nav-link pb-1 text-body-lg font-medium transition-colors duration-200 ease-out ${
                     isActive
-                      ? "bg-slate-800 text-white"
-                      : "text-slate-400 hover:bg-slate-800/60 hover:text-slate-200"
+                      ? "nav-link-active font-bold text-primary"
+                      : "text-on-surface-variant hover:text-on-surface"
                   }`
                 }
               >
@@ -39,7 +40,7 @@ export function SiteLayout() {
             href="https://github.com/SahilSidhu7/Sentinal"
             target="_blank"
             rel="noreferrer"
-            className="rounded-md border border-slate-700 px-3 py-1.5 text-sm text-slate-300 transition-all duration-200 ease-out hover:bg-slate-800 hover:shadow-md hover:shadow-black/20"
+            className="rounded-md border border-outline px-3 py-1.5 text-body-sm text-on-surface transition-colors duration-200 ease-out hover:bg-surface-container-low"
           >
             GitHub
           </a>
@@ -48,20 +49,17 @@ export function SiteLayout() {
       <main className="flex-1">
         <Outlet />
       </main>
-      <footer className="border-t border-slate-800 py-10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-6 text-center">
-          <nav className="flex items-center gap-6 text-sm text-slate-400">
-            <NavLink to="/docs" className="underline-offset-4 transition-colors duration-200 ease-out hover:text-slate-200 hover:underline">
+      <footer className="border-t border-outline bg-surface-container-lowest py-12">
+        <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-6 text-center">
+          <nav className="flex items-center gap-8 font-mono text-mono-label uppercase tracking-widest text-on-surface-variant">
+            <NavLink to="/docs" className="transition-colors duration-200 ease-out hover:text-primary">
               Docs
-            </NavLink>
-            <NavLink to="/install" className="underline-offset-4 transition-colors duration-200 ease-out hover:text-slate-200 hover:underline">
-              Installation
             </NavLink>
             <a
               href="https://github.com/SahilSidhu7/Sentinal"
               target="_blank"
               rel="noreferrer"
-              className="underline-offset-4 transition-colors duration-200 ease-out hover:text-slate-200 hover:underline"
+              className="transition-colors duration-200 ease-out hover:text-primary"
             >
               GitHub
             </a>
@@ -69,12 +67,12 @@ export function SiteLayout() {
               href="https://github.com/SahilSidhu7/Sentinal/blob/main/LICENSE"
               target="_blank"
               rel="noreferrer"
-              className="underline-offset-4 transition-colors duration-200 ease-out hover:text-slate-200 hover:underline"
+              className="transition-colors duration-200 ease-out hover:text-primary"
             >
               License
             </a>
           </nav>
-          <p className="text-xs text-slate-500">
+          <p className="text-body-sm text-on-surface-variant">
             Sentinal — local-first security monitoring, no LLM in the detection path.
           </p>
         </div>

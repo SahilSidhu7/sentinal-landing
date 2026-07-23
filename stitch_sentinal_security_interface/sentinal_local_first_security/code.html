@@ -1,0 +1,328 @@
+<!DOCTYPE html><html lang="en" class="dark"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&amp;family=Hanken+Grotesk:wght@600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet"><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">try{
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#51df9c",
+                    "on-secondary-fixed-variant": "#3c4a42",
+                    "outline-variant": "#3d4a41",
+                    "on-secondary-fixed": "#111e17",
+                    "on-secondary": "#26332c",
+                    "inverse-on-surface": "#2f3131",
+                    "secondary-fixed-dim": "#bacabf",
+                    "surface-bright": "#383939",
+                    "surface-dim": "#121414",
+                    "on-error": "#690005",
+                    "secondary-container": "#3e4c44",
+                    "on-primary-container": "#005434",
+                    "on-error-container": "#ffdad6",
+                    "surface-container-lowest": "#0d0e0f",
+                    "on-tertiary-container": "#494848",
+                    "primary-container": "#3ecf8e",
+                    "on-background": "#e3e2e2",
+                    "on-primary-fixed-variant": "#005233",
+                    "primary-fixed": "#71fcb6",
+                    "on-tertiary-fixed-variant": "#474746",
+                    "secondary-fixed": "#d6e6db",
+                    "tertiary": "#d5d3d2",
+                    "tertiary-container": "#b9b7b7",
+                    "secondary": "#bacabf",
+                    "on-primary-fixed": "#002112",
+                    "background": "#121414",
+                    "error": "#ffb4ab",
+                    "surface-tint": "#51df9c",
+                    "error-container": "#93000a",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "surface-container-highest": "#343535",
+                    "surface-container": "#1f2020",
+                    "tertiary-fixed": "#e5e2e1",
+                    "inverse-primary": "#006c45",
+                    "outline": "#869489",
+                    "inverse-surface": "#e3e2e2",
+                    "surface-container-low": "#1a1c1c",
+                    "surface-container-high": "#292a2a",
+                    "surface": "#121414",
+                    "on-tertiary": "#313030",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "on-primary": "#003822",
+                    "primary": "#60eca8",
+                    "on-surface": "#e3e2e2",
+                    "on-secondary-container": "#acbcb1",
+                    "on-surface-variant": "#bbcabe",
+                    "surface-variant": "#343535"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "md": "16px",
+                    "container-max": "1440px",
+                    "xs": "4px",
+                    "margin": "24px",
+                    "gutter": "24px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "display": ["Hanken Grotesk"],
+                    "headline-md": ["Hanken Grotesk"],
+                    "mono-data": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "mono-label": ["JetBrains Mono"],
+                    "body-lg": ["Inter"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "mono-data": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "mono-label": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    }catch(_e){}</script><meta charset="utf-8"></head><body class="font-body-lg text-body-lg selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant">
+<nav class="flex justify-between items-center w-full px-margin h-16 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary tracking-tight">Sentinal</span>
+<div class="hidden md:flex items-center gap-6"><a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors font-body-sm text-body-sm" href="#">Product</a><a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors font-body-sm text-body-sm" href="#">Documentation</a><a class="text-on-surface-variant dark:text-on-surface-variant hover:text-on-surface transition-colors font-body-sm text-body-sm" href="#">Installation</a></div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:flex text-on-surface-variant hover:text-on-surface p-2 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="bg-primary text-on-primary font-bold px-4 py-2 rounded-lg hover:brightness-110 active:scale-95 transition-all text-body-sm font-body-sm">Get Started</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="relative px-margin max-w-container-max mx-auto pt-16 pb-32 text-center md:text-left">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 self-center md:self-start bg-secondary-container/30 border border-outline-variant px-3 py-1 rounded-full text-primary-fixed-dim font-mono-label text-mono-label uppercase tracking-widest">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
+                        Local-First Security Engine
+                    </div>
+<h1 class="font-display text-display leading-tight text-white">
+                        Security for those who <span class="text-primary-container text-glow-primary">build local-first.</span>
+</h1>
+<p class="text-on-surface-variant max-w-xl font-body-lg text-body-lg leading-relaxed">
+                        Scan repos, detect anomalies, and secure your infrastructure without sending your data to the cloud. Total privacy, absolute control.
+                    </p>
+<div class="flex flex-wrap gap-4 mt-4 justify-center md:justify-start">
+<button class="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold hover:brightness-110 transition-all">Get Started</button>
+<button class="bg-surface-container-high border border-outline-variant text-white px-8 py-3 rounded-lg font-bold hover:bg-surface-container-highest transition-all flex items-center gap-2">
+                            Read Documentation
+                            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Code Terminal -->
+<div class="relative group">
+<div class="absolute -inset-1 bg-primary/20 blur-xl group-hover:bg-primary/30 transition-all rounded-xl opacity-50"></div>
+<div class="relative bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-2xl">
+<div class="flex items-center justify-between px-4 py-2 bg-surface-container-high border-b border-outline-variant">
+<div class="flex gap-2">
+<div class="w-3 h-3 rounded-full bg-error/40"></div>
+<div class="w-3 h-3 rounded-full bg-secondary/40"></div>
+<div class="w-3 h-3 rounded-full bg-primary/40"></div>
+</div>
+<span class="font-mono-label text-mono-label text-on-surface-variant">bash — sentinal</span>
+</div>
+<div class="p-6 font-mono-data text-mono-data terminal-scroll h-64 overflow-y-auto leading-relaxed">
+<div class="flex gap-3">
+<span class="text-primary opacity-50">$</span>
+<span class="text-on-surface">curl -sSf https://get.sentinal.dev | sh</span>
+</div>
+<div class="text-on-surface-variant mt-2">Downloading sentinal binaries...</div>
+<div class="text-primary-container mt-1">✓ Sentinal CLI installed successfully</div>
+<div class="flex gap-3 mt-4">
+<span class="text-primary opacity-50">$</span>
+<span class="text-on-surface">sentinal <span class="text-primary-fixed-dim">init</span></span>
+</div>
+<div class="text-on-surface-variant mt-2">[INFO] Initializing local vault at ~/.sentinal/vault...</div>
+<div class="text-on-surface-variant">[INFO] Creating secure enclave for local repository scan...</div>
+<div class="text-primary-container font-bold mt-2">Sentinal Node Active. Running local-first.</div>
+<div class="flex gap-3 mt-4">
+<span class="text-primary opacity-50">$</span>
+<span class="text-on-surface animate-pulse">_</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Grid Section -->
+<section class="bg-surface-container-low py-32 px-margin border-y border-outline-variant">
+<div class="max-w-container-max mx-auto">
+<div class="mb-16 text-center max-w-2xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-white mb-4">Hardened Infrastructure Monitoring</h2>
+<p class="text-on-surface-variant">Engineered for low-latency feedback and zero data leakage. Deploy the binary, own the results.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Scan -->
+<div class="glass-card p-8 rounded-xl hover:translate-y-[-4px] transition-transform group">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 border border-primary/20 flex items-center justify-center text-primary-container mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-2xl">search_check</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-2">Scan</h3>
+<p class="text-on-surface-variant text-body-sm font-body-sm">Exhaustive machine and repository audits for leaked secrets and misconfigurations.</p>
+</div>
+<!-- Detect -->
+<div class="glass-card p-8 rounded-xl hover:translate-y-[-4px] transition-transform group">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 border border-primary/20 flex items-center justify-center text-primary-container mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-2xl" data-weight="fill">security</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-2">Detect</h3>
+<p class="text-on-surface-variant text-body-sm font-body-sm">Real-time log anomaly identification using lightweight, local ML models.</p>
+</div>
+<!-- Show -->
+<div class="glass-card p-8 rounded-xl hover:translate-y-[-4px] transition-transform group">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 border border-primary/20 flex items-center justify-center text-primary-container mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-2xl">monitoring</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-2">Show</h3>
+<p class="text-on-surface-variant text-body-sm font-body-sm">High-density live dashboard visualization for global system status monitoring.</p>
+</div>
+<!-- Act -->
+<div class="glass-card p-8 rounded-xl hover:translate-y-[-4px] transition-transform group">
+<div class="w-12 h-12 rounded-lg bg-primary-container/10 border border-primary/20 flex items-center justify-center text-primary-container mb-6 group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-2xl">touch_app</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-white mb-2">Act</h3>
+<p class="text-on-surface-variant text-body-sm font-body-sm">Human-in-the-loop manual approval for response actions and firewall rules.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Local-First Section (Bento Style) -->
+<section class="py-32 px-margin max-w-container-max mx-auto">
+<div class="grid lg:grid-cols-12 gap-6">
+<!-- Main Statement -->
+<div class="lg:col-span-8 bg-surface-container border border-outline-variant p-10 rounded-2xl flex flex-col justify-end relative overflow-hidden h-[400px]">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full object-cover opacity-20" data-alt="A sophisticated technical background showing stylized data flows and network nodes in deep charcoal and emerald green. The atmosphere is professional and secure, with subtle glowing lines connecting various geometric points, representing a decentralized local-first security infrastructure. High-contrast monochromatic aesthetic with premium lighting effects." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB5YRBjym0jmRHMIY8tdqQrv5XnQ9iqe01CxyzHh1Vc1IWmh5mniEBSHxdtm526_6bnYwrCRsCRXgxJKC3lloLTadxtEbJSU6h7_TY-M7_WzcrT29RvWXDGlqPEx1Id28_MLJv9oxhuyFm62SmWRtQoLgIAgZGZLtk1qPANqJJecirxSKI22gVik-d3E_v92tNPgEzcggfRk1u1YsSsy39GWlEHUZfGYOcRnwCpczgY9PCbeOY8YnlG')"></div>
+</div>
+<div class="relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-white mb-4">Why Local-First?</h2>
+<p class="text-on-surface-variant max-w-2xl text-body-lg">Cloud-based security is a paradox. You give up your logs and infrastructure blueprints to secure them. Sentinal flips the script. We provide the engine; you provide the environment.</p>
+</div>
+</div>
+<!-- Trust Card 1 -->
+<div class="lg:col-span-4 bg-surface-container border border-outline-variant p-8 rounded-2xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary-fixed-dim text-4xl">fingerprint</span>
+<h3 class="font-headline-md text-headline-md text-white">Absolute Privacy</h3>
+<p class="text-on-surface-variant text-body-sm">Your API keys, secrets, and system logs never leave your hardware. No metadata collection. No telemetry.</p>
+</div>
+<!-- Trust Card 2 -->
+<div class="lg:col-span-4 bg-surface-container border border-outline-variant p-8 rounded-2xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary-fixed-dim text-4xl">bolt</span>
+<h3 class="font-headline-md text-headline-md text-white">Zero Latency</h3>
+<p class="text-on-surface-variant text-body-sm">Detection happens on the edge, exactly where the events occur. Instant response without round-trip delays.</p>
+</div>
+<!-- Trust Card 3 -->
+<div class="lg:col-span-8 bg-surface-container border border-outline-variant p-8 rounded-2xl flex items-center justify-between group">
+<div class="flex flex-col gap-2">
+<h3 class="font-headline-md text-headline-md text-white">Open for Inspection</h3>
+<p class="text-on-surface-variant text-body-sm">The core engine is open-source. Verify the code yourself and audit our scanning logic.</p>
+</div>
+<div class="p-4 bg-primary/10 rounded-full group-hover:bg-primary/20 transition-colors">
+<span class="material-symbols-outlined text-primary-container">code</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-margin text-center">
+<div class="max-w-4xl mx-auto bg-primary-container text-on-primary-container p-16 rounded-3xl relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-20">
+<span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">shield</span>
+</div>
+<h2 class="font-display text-[40px] font-bold mb-6">Ready to secure the local way?</h2>
+<p class="text-on-primary-container/80 text-body-lg mb-10 max-w-lg mx-auto">Join 1,200+ security engineers using Sentinal to protect their infrastructure without compromise.</p>
+<div class="flex flex-wrap gap-4 justify-center">
+<button class="bg-on-primary-container text-white px-10 py-4 rounded-xl font-bold hover:brightness-125 transition-all">Create Free Instance</button>
+<button class="border-2 border-on-primary-container/20 px-10 py-4 rounded-xl font-bold hover:bg-on-primary-container/5 transition-all">Talk to Sales</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Simple Footer -->
+<footer class="bg-surface border-t border-outline-variant py-16 px-margin">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
+<div class="flex flex-col gap-4">
+<span class="font-headline-md text-headline-md font-bold text-primary">Sentinal</span>
+<p class="text-on-surface-variant max-w-xs text-body-sm">Defending the local-first ecosystem since 2024. Authority through precision.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold text-body-sm">Product</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-sm" href="#">Features</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-sm" href="#">Integrations</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-sm" href="#">Changelog</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold text-body-sm">Resources</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-sm" href="#">Docs</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-sm" href="#">Security</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-sm" href="#">Guides</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-white font-bold text-body-sm">Company</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-sm" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-sm" href="#">Privacy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-body-sm" href="#">Terms</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto pt-12 mt-12 border-t border-outline-variant flex justify-between items-center text-on-surface-variant text-mono-label font-mono-label">
+<span class="">© 2024 Sentinal Technologies Ltd.</span>
+<div class="flex gap-4">
+<a class="hover:text-primary" href="#">X (Twitter)</a>
+<a class="hover:text-primary" href="#">GitHub</a>
+<a class="hover:text-primary" href="#">Discord</a>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Micro-interactions
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'scale(0.96)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = 'scale(1)';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = 'scale(1)';
+            });
+        });
+
+        // Sticky Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-lg');
+                header.style.backgroundColor = 'rgba(18, 20, 20, 0.95)';
+            } else {
+                header.classList.remove('shadow-lg');
+                header.style.backgroundColor = 'rgba(18, 20, 20, 0.8)';
+            }
+        });
+    </script>
+
+</body></html>

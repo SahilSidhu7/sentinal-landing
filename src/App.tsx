@@ -1,8 +1,7 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { SiteLayout } from "./components/SiteLayout";
 import { Home } from "./pages/Home";
 import { Docs } from "./pages/Docs";
-import { Install } from "./pages/Install";
 
 function App() {
   return (
@@ -11,7 +10,7 @@ function App() {
         <Route element={<SiteLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/docs" element={<Docs />} />
-          <Route path="/install" element={<Install />} />
+          <Route path="/install" element={<Navigate to="/docs#installation" replace />} />
         </Route>
       </Routes>
     </BrowserRouter>

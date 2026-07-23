@@ -1,23 +1,29 @@
+import { SyncIcon } from "./icons";
+
 export function ArchitectureDiagram() {
   return (
-    <div className="flex flex-col items-center gap-3 text-sm sm:flex-row sm:justify-center sm:gap-0">
-      <div className="w-full max-w-[220px] rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-center">
-        <p className="font-semibold text-white">Your server</p>
-        <p className="mt-1 text-xs text-slate-500">sentinel-agent</p>
-        <p className="mt-2 text-xs text-slate-400">tails logs, runs detection locally</p>
+    <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-[1fr_auto_1fr]">
+      <div className="rounded-2xl border border-outline bg-surface-container-low p-8 text-left">
+        <div className="font-mono text-mono-label text-primary">[ SENTINEL_AGENT ]</div>
+        <p className="mt-3 font-display text-headline-md font-semibold text-on-surface">Your server</p>
+        <p className="mt-2 text-body-sm text-on-surface-variant">tails logs, runs detection locally</p>
       </div>
 
-      <div className="flex flex-col items-center px-4 text-slate-500 sm:rotate-0">
-        <span className="hidden font-mono text-xs sm:block">findings + scores only</span>
-        <span className="text-lg sm:hidden">↓</span>
-        <span className="hidden text-lg sm:block">→</span>
-        <span className="font-mono text-xs sm:hidden">findings + scores only</span>
+      <div className="flex flex-row items-center justify-center gap-3 text-on-surface-variant md:flex-col md:gap-3">
+        <div className="h-px w-12 bg-gradient-to-r from-primary to-transparent md:h-12 md:w-px md:bg-gradient-to-b" />
+        <SyncIcon className="h-5 w-5 shrink-0" />
+        <span className="whitespace-nowrap font-mono text-mono-label text-on-surface-variant">
+          findings + scores only
+        </span>
+        <div className="h-px w-12 bg-gradient-to-l from-primary to-transparent md:h-12 md:w-px md:bg-gradient-to-t" />
       </div>
 
-      <div className="w-full max-w-[220px] rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-center">
-        <p className="font-semibold text-white">Your infra</p>
-        <p className="mt-1 text-xs text-slate-500">core backend + dashboard</p>
-        <p className="mt-2 text-xs text-slate-400">FastAPI, SQLite, live WebSocket feed</p>
+      <div className="rounded-2xl border border-outline bg-surface-container-low p-8 text-left">
+        <div className="font-mono text-mono-label text-primary">[ SENTINAL_CORE ]</div>
+        <p className="mt-3 font-display text-headline-md font-semibold text-on-surface">Your infra</p>
+        <p className="mt-2 text-body-sm text-on-surface-variant">
+          core backend + dashboard — FastAPI, SQLite, live WebSocket feed
+        </p>
       </div>
     </div>
   );

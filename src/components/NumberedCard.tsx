@@ -8,10 +8,12 @@ export function NumberedCard({
   description: string;
 }) {
   return (
-    <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-6 transition-transform duration-200 ease-out hover:scale-[1.02]">
-      <span className="font-mono text-3xl font-bold text-slate-700">{number}</span>
-      <h3 className="mt-4 text-lg font-semibold text-white">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-slate-400">{description}</p>
+    <div className="group rounded-xl border border-outline bg-surface-container-low p-8 transition-all duration-200 ease-out hover:border-primary/50">
+      <div className="font-display text-4xl text-primary/20 transition-colors group-hover:text-primary">
+        {number}
+      </div>
+      <h3 className="mt-6 font-display text-headline-md font-semibold text-on-surface">{title}</h3>
+      <p className="mt-3 text-body-sm text-on-surface-variant">{description}</p>
     </div>
   );
 }
