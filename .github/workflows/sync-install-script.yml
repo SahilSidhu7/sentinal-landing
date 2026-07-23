@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   sync:
@@ -43,6 +44,13 @@ jobs:
           git add public/install.sh
           git commit -m "sync install.sh from SahilSidhu7/Sentinal@${{ steps.upstream.outputs.sha }}"
           git push
+
+      - name: Trigger Pages deploy
+        if: steps.diff.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run deploy.yml --ref main
 
       - name: No changes
         if: steps.diff.outputs.changed == 'false'
